@@ -1,58 +1,75 @@
 (ns clojure-exercise.core
   (:gen-class))
 
-(defn -foo
-  "This is foo function"
-  [& args]
-  (println "This line is in the foo")
+(defn hello
+  []
+  "Hello, World!"
 )
 
 (defn teen
   [age]
   (if (and (> age 12) (< age  20))
-    (println true)
-    (println false)
+    true
+    false
   )
 )
 
 (defn abs
   [number]
   (if (> number 0)
-    (println number)
-    (println (- number))
+    number
+    (- number)
   )
 )
 
 (defn leap
   [year]
   (if (= (rem year 400) 0)
-    (println true)
+    true
     (if (= (rem year 100) 0)
-      (println false)
+      false
       (if (= (rem year 4) 0)
-        (println true)
-        (println false)
+        true
+        false
       )
     )
   )
 )
 
+(defn my_count
+  [my_seq]
+
+  (if (not= nil (first my_seq))
+    (inc (my_count (rest my_seq)))
+    0
+  )
+)
+
+(defn add100
+  [n]
+  (+ n 100)
+)
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!")
-  (println "Hello, New World")
-  (-foo)
+  (println "I am -main function")
 
-  (teen 17)
-  (teen 22)
+  (println (hello))
 
-  (abs 9)
-  (abs -5)
+  (println (teen 17))
+  (println (teen 22))
 
-  (leap 2012)
-  (leap 2000)
-  (leap 4)
-  (leap 1900)
+  (println (abs 9))
+  (println (abs -5))
+
+  (println (leap 2012))
+  (println (leap 1900))
+
+  (println (my_count '(22 33 44 00)))
+  (println (my_count '(11 44 66)))
+
+  (println (add100 24))
+  (println (add100 -99))
 )
 
