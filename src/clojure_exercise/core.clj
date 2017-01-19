@@ -50,6 +50,17 @@
   (+ n 100)
 )
 
+(defn dec-maker
+  [dec-by]
+ #(- % dec-by)
+)
+
+(defn spiff
+  [v]
+  (second (rest v))
+  ;(nth v 3)
+)
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
@@ -71,5 +82,12 @@
 
   (println (add100 24))
   (println (add100 -99))
+
+  (def dec9 (dec-maker 9))
+  (println (dec9 10))
+
+  (println (spiff [11 22 33 44]))
+  (println (spiff [121 "fdsfsf"]))
+
 )
 
