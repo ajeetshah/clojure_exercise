@@ -3,5 +3,25 @@
             [clojure-exercise.core :refer :all]))
 
 (deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+  (testing "Just a check"
+    (is (= 1 1))))
+
+(deftest teen-test
+  (
+   testing "teen function"
+    (is (true? (teen 16)))
+  )
+)
+
+(deftest abs-test
+  (testing "abs function"
+    (is (true? (> (abs -199) 0)))
+  )
+)
+
+(deftest leap-test
+  (testing "leap function"
+   (is (true? (leap 2012)))
+  )  
+)
+

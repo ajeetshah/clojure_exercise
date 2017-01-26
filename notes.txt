@@ -1,0 +1,18 @@
+or:
+	first TRUTH or the last value
+
+and:
+	first FALSE or the last TRUTH
+
+map: 
+	(get {:a 0 :b 1} :b)
+
+(get-in {:a 0 :b {:c "ho hum"}} [:b :c])
+
+({:first "Robert" :last "Brown"} :first)
+
+(:last {:first "Robert" :last "Brown"})
+
+hash-set:
+	#{:a :b :a :d}
+

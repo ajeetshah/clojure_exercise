@@ -8,10 +8,7 @@
 
 (defn teen
   [age]
-  (if (and (> age 12) (< age  20))
-    true
-    false
-  )
+  (and (> age 12) (< age  20))
 )
 
 (defn abs
@@ -61,15 +58,46 @@
   ;(nth v 3)
 )
 
+(defn element-lengths
+  [collection]
+  
+  (loop [ i 0]
+    (when (< i (count collection))
+      (println (count (nth collection i)))
+      (recur (inc i))
+    )
+  )
+)
+
+(defn test_loop
+  [i_max]
+  (loop [i 0]
+      (when (<= i i_max)
+          (println "running loop: " i)
+          (recur (inc i))
+      )
+  )
+)
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "I am -main function")
+  ;(println "I am -main function")
+
+  (element-lengths '("hello" "world" "harry" "potter"))
+
+  (comment ;comment start
 
   (println (hello))
 
   (println (teen 17))
   (println (teen 22))
+  (println (teen 22))
+  (println (teen 22))
+  (println (teen 22))
+  (println (teen 22))
+  (println (teen 22))
+
 
   (println (abs 9))
   (println (abs -5))
@@ -88,6 +116,10 @@
 
   (println (spiff [11 22 33 44]))
   (println (spiff [121 "fdsfsf"]))
+
+  (test_loop 10)
+  
+  ) ;comment end
 
 )
 
